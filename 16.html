@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+  <title>ES5+ Features Display</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    .student {
+      margin-bottom: 15px;
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 8px;
+    }
+  </style>
+ </head>
+ <body>
+  <h2>
+ 📘 Student Details</h2>
+  <div id="output"></div>
+  <script>
+    class Student {
+      constructor(name = "Unknown", marks = []) {
+        this.name = name;
+        this.marks = marks;
+      }
+  
+      calculateAverage = () => {
+        const total = this.marks.reduce((sum, mark) => sum + mark, 0);
+        return (total / this.marks.length).toFixed(2);
+      }
+  
+      display = () => {
+        const { name } = this;
+        return `Name: <strong>${name}</strong><br>Average: <strong>${this.calculateAverage()}</strong>`;
+      }
+    }
+  
+    const student1 = new Student("Greeshma", [85, 90, 95]);
+    const student2 = new Student("Zane", [70, 75, 80]);
+  
+    const outputDiv = document.getElementById("output");
+    [student1, student2].forEach(student => {
+      const div = document.createElement("div");
+      div.className = "student";
+      div.innerHTML = student.display();
+      outputDiv.appendChild(div);
+    });
+  
+    const delayMessage = (msg = "Done!", time = 2000) => {
+      return new Promise(resolve => {
+        setTimeout(() => resolve(msg), time);
+      });
+    };
+  
+    delayMessage("⏳ Waited for 2 seconds...").then(message => {
+      const msgDiv = document.createElement("div");
+      msgDiv.style.marginTop = "20px";
+      msgDiv.innerHTML = `<em>${message}</em>`;
+      outputDiv.appendChild(msgDiv);
+    });
+  </script>
+  
+ </body>
+ </html>
