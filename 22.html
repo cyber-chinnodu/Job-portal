@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+  <title>Pizza Order Form</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 8px;
+      text-align: center;
+    }
+    button {
+      margin-top: 10px;
+      margin-right: 10px;
+      padding: 6px 12px;
+    }
+  </style>
+ </head>
+ <body>
+  <h2>Pizza order Form</h2>
+  <table>
+    <tr>
+      <th>Item name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+    <tr>
+      <td>Chicken Pizza</td>
+      <td>100</td>
+      <td><input type="number" id="chickenQty" min="0"></td>
+    </tr>
+    <tr>
+      <td>Paneer Pizza</td>
+      <td>80</td>
+      <td><input type="number" id="paneerQty" min="0"></td>
+    </tr>
+    <tr>
+      <td>Veg Pizza</td>
+      <td>70</td>
+      <td><input type="number" id="vegQty" min="0"></td>
+    </tr>
+  </table>
+  <br>
+  <label for="total">totalcost</label>
+  <input type="text" id="total" readonly>
+  <br><br>
+  <button onclick="confirmOrder()">confirm order</button>
+  <button onclick="cancelOrder()">Cancel order</button>
+  <script>
+    function confirmOrder() {
+      let chicken = parseInt(document.getElementById("chickenQty").value) || 0;
+      let paneer = parseInt(document.getElementById("paneerQty").value) || 0;
+      let veg = parseInt(document.getElementById("vegQty").value) || 0;
+      let total = (chicken * 100) + (paneer * 80) + (veg * 70);
+      document.getElementById("total").value = total;
+      // Confirmation popup
+      let confirmBox = confirm("your order is confirmed reach you in 10 minutes");
+      if (confirmBox) {
+        alert("Thank you for ordering!");
+      } else {
+        alert("You canceled the order.");
+      }
+    }
+    function cancelOrder() {
+      // Reset all inputs
+      document.getElementById("chickenQty").value = "";
+      document.getElementById("paneerQty").value = "";
+      document.getElementById("vegQty").value = "";
+      document.getElementById("total").value = "";
+    }
+  </script>
+ </body>
+ </html>
