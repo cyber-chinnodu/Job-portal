@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>My Portfolio</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+   body {
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     background-color: #f9f9f9;
+   }
+   header {
+     background-color: #333;
+     color: white;
+     padding: 1rem 0;
+     text-align: center;
+   }
+   nav {
+     background-color: #444;
+     display: flex;
+     justify-content: center;
+     gap: 2rem;
+     padding: 0.5rem 0;
+   }
+   nav a {
+     color: white;
+     text-decoration: none;
+     font-weight: bold;
+   }
+   nav a:hover {
+     text-decoration: underline;
+   }
+   main {
+     max-width: 900px;
+     margin: auto;
+     padding: 2rem;
+   }
+   section {
+     margin-bottom: 3rem;
+   }
+   ul {
+     padding-left: 20px;
+   }
+   img {
+     max-width: 150px;
+     border-radius: 50%;
+   }
+   table {
+     width: 100%;
+     border-collapse: collapse;
+   }
+   table, th, td {
+     border: 1px solid #ccc;
+   }
+   th, td {
+     padding: 0.75rem;
+     text-align: left;
+   }
+   form {
+     display: flex;
+flex-direction: column;
+   }
+   label {
+     margin-top: 1rem;
+     margin-bottom: 0.25rem;
+   }
+   input, textarea {
+     padding: 0.5rem;
+     font-size: 1rem;
+     margin-bottom: 1rem;
+   }
+   button {
+     padding: 0.7rem;
+     font-size: 1rem;
+     background-color: #333;
+     color: white;
+     border: none;
+     cursor: pointer;
+   }
+   button:hover {
+     background-color: #555;
+   }
+   footer {
+     text-align: center;
+     background-color: #333;
+     color: white;
+     padding: 1rem;
+   }
+ </style>
+</head>
+<body>
+ <header>
+   <h1>My Portfolio</h1>
+   <p>Welcome to my personal website!</p>
+ </header>
+ <nav>
+   <a href="#about">About Me</a>
+   <a href="#projects">Projects</a>
+   <a href="#contact">Contact</a>
+ </nav>
+ <main>
+   <section id="about">
+     <h2>About Me</h2>
+     <img src="https://via.placeholder.com/150" alt="Profile Picture">
+     <p>Hello! I'm Greeshma, a passionate learner and aspiring web developer. I love working on 
+creative tech projects and learning new skills.</p>
+     <h3>My Skills</h3>
+     <ul>
+       <li>Python</li>
+       <li>JavaScript</li>
+       <li>HTML & CSS</li>
+       <li>ReactJS</li>
+       <li>SQL</li>
+       <li>Data Structures & OOP</li>
+     </ul>
+   </section>
+   <section id="projects">
+     <h2>Projects</h2>
+     <table>
+       <thead>
+         <tr>
+           <th>Project Name</th>
+           <th>Description</th>
+           <th>Status</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>DSA in AR</td>
+           <td>An AR-based educational site to visualize data structures</td>
+           <td>In Progress</td>
+         </tr>
+         <tr>
+           <td>MyHobbies Website</td>
+           <td>Personal hobby website with feedback form and multimedia</td>
+           <td>Completed</td>
+         </tr>
+         <tr>
+           <td>Quiz in VR</td>
+           <td>Interactive quiz experience using VR in web</td>
+           <td>In Progress</td>
+         </tr>
+       </tbody>
+     </table>
+   </section>
+   <section id="contact">
+     <h2>Contact Me</h2>
+     <form>
+       <label for="name">Name:</label>
+       <input type="text" id="name" name="name" required>
+       <label for="email">Email:</label>
+       <input type="email" id="email" name="email" required>
+       <label for="message">Message:</label>
+       <textarea id="message" name="message" rows="5" required></textarea>
+       <button type="submit">Send</button>
+     </form>
+   </section>
+ </main>
+ <footer>
+   <p>&copy; 2025 Greeshma | All Rights Reserved</p>
+ </footer>
+</body>
+</html>
