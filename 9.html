@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Update Product Price</title>
+ <style>
+   .product {
+     border: 1px solid #ccc;
+     padding: 20px;
+     width: 300px;
+     margin: 50px auto;
+     font-family: Arial, sans-serif;
+   }
+   .price {
+     color: green;
+     font-size: 20px;
+     font-weight: bold;
+   }
+   button {
+     padding: 10px 15px;
+     margin-top: 10px;
+   }
+ </style>
+</head>
+<body>
+ <div class="product">
+   <h2>Wireless Earbuds</h2>
+   <p class="price" id="product-price">₹2999</p>
+   <button onclick="updatePrice()">Apply Discount</button>
+ </div>
+ <script>
+   function updatePrice() {
+     // Accessing the price element using DOM and updating it
+     document.getElementById("product-price").textContent = "₹1999";
+   }
+ </script>
+</body>
+</html>
