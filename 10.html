@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Live Stock Price Update</title>
+ <style>
+   .stock-container {
+     border: 2px solid #444;
+     border-radius: 8px;
+     padding: 20px;
+     width: 300px;
+     margin: 50px auto;
+     text-align: center;
+     font-family: Arial, sans-serif;
+     background-color: #f0f8ff;
+   }
+   .stock-price {
+     font-size: 24px;
+     color: green;
+     font-weight: bold;
+   }
+ </style>
+</head>
+<body>
+ <div class="stock-container">
+   <h2>Reliance Industries</h2>
+   <p>Stock Price:</p>
+   <p id="stock-price" class="stock-price">₹2735.00</p>
+ </div>
+ <script>
+   function getRandomPrice(base) {
+     // Generate a small random fluctuation in price
+     const change = (Math.random() * 10 - 5).toFixed(2);
+     return (base + parseFloat(change)).toFixed(2);
+   }
+   function updateStockPrice() {
+     const priceElement = document.getElementById("stock-price");
+     let currentPrice = parseFloat(priceElement.textContent.replace("₹", ""));
+     let newPrice = getRandomPrice(currentPrice);
+     priceElement.textContent = "₹" + newPrice;
+     // Change color if price drops or increases
+     priceElement.style.color = newPrice < currentPrice ? "red" : "green";
+   }
+   // Update stock price every 3 seconds
+   setInterval(updateStockPrice, 3000);
+ </script>
+</body>
+</html>
