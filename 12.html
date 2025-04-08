@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Mouse Coordinates Tracker</title>
+ <style>
+   body {
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-family: Arial, sans-serif;
+     background-color: #f9f9f9;
+   }
+   .coordinates {
+     border: 2px solid #333;
+     padding: 20px 40px;
+     background-color: #fff;
+     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+     font-size: 20px;
+   }
+ </style>
+</head>
+<body>
+ <div class="coordinates">
+   <p>Mouse X: <span id="x-coord">0</span></p>
+   <p>Mouse Y: <span id="y-coord">0</span></p>
+ </div>
+ <script>
+   document.addEventListener('mousemove', function(event) {
+     document.getElementById('x-coord').textContent = event.clientX;
+     document.getElementById('y-coord').textContent = event.clientY;
+   });
+ </script>
+</body>
+</html>
