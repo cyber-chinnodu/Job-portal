@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Live Sports Score Update</title>
+ <style>
+   body {
+     font-family: Arial, sans-serif;
+     background: #f0f0f0;
+     text-align: center;
+     padding: 40px;
+   }
+   .scoreboard {
+     background: #fff;
+     border: 2px solid #222;
+     border-radius: 10px;
+     width: 400px;
+     margin: auto;
+     padding: 20px;
+     box-shadow: 0 0 10px rgba(0,0,0,0.2);
+   }
+   .team {
+     font-size: 22px;
+     margin: 15px 0 5px;
+   }
+   .score {
+     font-size: 32px;
+     color: #28a745;
+     margin: 5px 0 15px;
+   }
+   .btn-group {
+     display: flex;
+     justify-content: center;
+     gap: 10px;
+     margin-bottom: 20px;
+   }
+   button {
+     padding: 8px 16px;
+     font-size: 14px;
+     cursor: pointer;
+     border: none;
+     border-radius: 5px;
+     background-color: #007bff;
+     color: white;
+     transition: 0.3s ease;
+   }
+   button:hover {
+     background-color: #0056b3;
+   }
+ </style>
+</head>
+<body>
+ <div class="scoreboard">
+   <div class="team">India</div>
+   <div id="score-india" class="score">0</div>
+   <div class="btn-group">
+     <button onclick="updateScore('india', 1)">+1</button>
+     <button onclick="updateScore('india', 4)">+4</button>
+     <button onclick="updateScore('india', 6)">+6</button>
+     <button onclick="resetScore('india')">Reset</button>
+   </div>
+   <div class="team">Australia</div>
+   <div id="score-aus" class="score">0</div>
+   <div class="btn-group">
+     <button onclick="updateScore('aus', 1)">+1</button>
+     <button onclick="updateScore('aus', 4)">+4</button>
+     <button onclick="updateScore('aus', 6)">+6</button>
+     <button onclick="resetScore('aus')">Reset</button>
+   </div>
+ </div>
+ <script>
+   let indiaScore = 0;
+   let ausScore = 0;
+   function updateScore(team, value) {
+     if (team === 'india') {
+       indiaScore += value;
+       document.getElementById('score-india').textContent = indiaScore;
+     } else if (team === 'aus') {
+       ausScore += value;
+       document.getElementById('score-aus').textContent = ausScore;
+     }
+   }
+   function resetScore(team) {
+     if (team === 'india') {
+       indiaScore = 0;
+       document.getElementById('score-india').textContent = indiaScore;
+     } else if (team === 'aus') {
+       ausScore = 0;
+       document.getElementById('score-aus').textContent = ausScore;
+     }
+   }
+ </script>
+</body>
+</html>
