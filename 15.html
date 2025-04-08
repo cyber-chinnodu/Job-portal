@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Move the Element</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: #4CAF50;
+      position: absolute;
+      top: 200px;
+      left: 200px;
+      transition: top 0.1s, left 0.1s;
+    }
+    h2 {
+      position: absolute;
+      top: 20px;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+ </head>
+ <body>
+  <h2>Use Arrow Keys to Move the Box</h2>
+  <div id="box"></div>
+  <script>
+    const box = document.getElementById("box");
+    let topPos = 200;
+    let leftPos = 200;
+    const moveAmount = 20;
+    document.addEventListener("keydown", function(event) {
+      switch (event.key) {
+        case "ArrowUp":
+          topPos -= moveAmount;
+          break;
+        case "ArrowDown":
+          topPos += moveAmount;
+          break;
+        case "ArrowLeft":
+          leftPos -= moveAmount;
+          break;
+        case "ArrowRight":
+          leftPos += moveAmount;
+          break;
+      }
+         
+      box.style.top = topPos + "px";
+      box.style.left = leftPos + "px";
+    });
+  </script>
+ </body>
+ </html>
