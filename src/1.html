@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Hobbies</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+      header,
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+      }
+      main {
+        padding: 2rem;
+        max-width: 800px;
+        margin: auto;
+        background-color: white;
+      }
+      section {
+        margin-bottom: 2rem;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        margin: 0.5rem 0 0.2rem;
+      }
+      input,
+      textarea,
+      button {
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+      img,
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to My Hobbies Page</h1>
+    </header>
+    <main>
+      <section>
+        <h2>My Hobbies</h2>
+        <ul>
+          <li>Reading thriller novels</li>
+          <li>Listening to music</li>
+          <li>Web development projects</li>
+          <li>Creative writing</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Favorite Books & Movies</h2>
+        <article>
+          <h3>Books</h3>
+          <ul>
+            <li>The Silent Patient</li>
+            <li>Verity</li>
+            <li>Before I Go to Sleep</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Movies</h3>
+          <ul>
+            <li>Inception</li>
+            <li>Gone Girl</li>
+            <li>Knives Out</li>
+          </ul>
+        </article>
+      </section>
+      <section>
+        <h2>Showcase</h2>
+        <p>
+          Here's a glimpse of my reading setup and a video from a book review I
+          loved.
+        </p>
+        <img
+          src="https://via.placeholder.com/600x300?text=My+Reading+Corner"
+          alt="Reading 
+setup"
+        />
+        <video controls>
+          <source src="sample-video.mp4" type="video/mp4" />
+          Y our browser does not support the video tag.
+        </video>
+      </section>
+      <section>
+        <h2>Feedback Form</h2>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="hobby">What's your favorite hobby?</label>
+          <input type="text" id="hobby" name="hobby" />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 My Hobbies Page. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
