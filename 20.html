@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Insert Dashes Between Even Numbers</title>
+ <style>
+   body {
+     font-family: Arial, sans-serif;
+     padding: 30px;
+   }
+   input {
+     padding: 8px;
+     margin-right: 10px;
+   }
+   button {
+     padding: 8px 14px;
+   }
+   #result {
+     margin-top: 15px;
+     font-weight: bold;
+     color: #333;
+   }
+ </style>
+</head>
+<body>
+ <h2>➖ Dash Inserter Between Even Digits</h2>
+ <input type="text" id="numberInput" placeholder="Enter number (e.g. 025468)">
+ <button onclick="insertDashes()">Insert Dashes</button>
+ <div id="result"></div>
+ <script>
+   function insertDashes() {
+     const input = document.getElementById("numberInput").value;
+     const digits = input.split('');
+     let result = digits[0];
+     for (let i = 1; i < digits.length; i++) {
+       if (parseInt(digits[i - 1]) % 2 === 0 && parseInt(digits[i]) % 2 === 0) {
+         result += '-' + digits[i];
+       } else {
+         result += digits[i];
+       }
+     }
+     document.getElementById("result").innerText = `Output: ${result}`;
+   }
+ </script>
+</body>
+</html>
