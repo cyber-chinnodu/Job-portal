@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Stacking Elements</title>
+ <style>
+   body {
+     font-family: Arial, sans-serif;
+     padding: 40px;
+     text-align: center;
+     background-color: #f0f0f0;
+   }
+   #stack-container {
+     display: flex;
+flex-direction: column;
+     align-items: center;
+     gap: 10px;
+     margin-top: 30px;
+   }
+   .box {
+     width: 150px;
+     height: 50px;
+     background-color: #4CAF50;
+     border: 2px solid #333;
+     border-radius: 5px;
+     color: white;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-weight: bold;
+   }
+   button {
+     padding: 10px 20px;
+     font-size: 16px;
+     margin-bottom: 20px;
+     background-color: #007bff;
+     color: white;
+     border: none;
+     cursor: pointer;
+     border-radius: 5px;
+   }
+   button:hover {
+     background-color: #0056b3;
+   }
+ </style>
+</head>
+<body>
+ <h2>Stack Elements Using JavaScript</h2>
+ <button onclick="addBox()">Add New Box</button>
+ <div id="stack-container">
+   <!-- Boxes will be stacked here -->
+ </div>
+ <script>
+   let count = 1;
+   function addBox() {
+     const box = document.createElement("div");
+     box.className = "box";
+     box.textContent = "Box " + count++;
+     document.getElementById("stack-container").appendChild(box);
+   }
+ </script>
+</body>
+</html>
