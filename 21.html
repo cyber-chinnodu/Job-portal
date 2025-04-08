@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+  <title>Most Frequent Item</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+    h2 {
+      color: #4A90E2;
+    }
+    button {
+      padding: 8px 16px;
+      background-color: #4A90E2;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+ </head>
+ <body>
+  <h2>
+ 🔁 Find Most Frequent Item in an Array</h2>
+  <p>Sample Array: <code>[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]</code></p>
+  <button onclick="findMostFrequent()">Show Result</button>
+  <div id="result"></div>
+  <script>
+    function findMostFrequent() {
+      var arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+      var frequency = {};
+      var maxCount = 0;
+      var mostFrequent;
+      for (let i = 0; i < arr1.length; i++) {
+        let item = arr1[i];
+        frequency[item] = (frequency[item] || 0) + 1;
+        if (frequency[item] > maxCount) {
+          maxCount = frequency[item];
+          mostFrequent = item;
+        }
+      }
+      document.getElementById("result").innerText = `Most Frequent Item: ${mostFrequent} ($
+ {maxCount} times)`;
+    }
+  </script>
+ </body>
+ </html>
