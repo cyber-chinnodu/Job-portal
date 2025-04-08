@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+  <title>Multiplication Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 8px 12px;
+      text-align: center;
+    }
+    input {
+      padding: 6px;
+      margin-right: 10px;
+    }
+    button {
+      padding: 6px 14px;
+      cursor: pointer;
+    }
+  </style>
+ </head>
+ <body>
+  <h2>
+ 📐 Multiplication Table Generator</h2>
+  <label>Rows: <input type="number" id="rowsInput" placeholder="e.g. 5"></label>
+  <label>Columns: <input type="number" id="colsInput" placeholder="e.g. 5"></label>
+  <button onclick="generateTable()">Generate</button>
+  <div id="tableContainer"></div>
+  <script>
+    function generateTable() {
+      let rows = parseInt(document.getElementById("rowsInput").value);
+      let cols = parseInt(document.getElementById("colsInput").value);
+      // Default to 10x10 if empty or 0
+      if (!rows || rows <= 0) rows = 10;
+      if (!cols || cols <= 0) cols = 10;
+      let tableHTML = "<table>";
+      for (let i = 1; i <= rows; i++) {
+        tableHTML += "<tr>";
+        for (let j = 1; j <= cols; j++) {
+          tableHTML += `<td>${i * j}</td>`;
+        }
+        tableHTML += "</tr>";
+      }
+      tableHTML += "</table>";
+      document.getElementById("tableContainer").innerHTML = tableHTML;
+    }
+  </script>
+ </body>
+ </html>
