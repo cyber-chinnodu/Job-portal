@@ -1,16 +1,22 @@
-function useCounter(initial = 0) {
-    const [count, setCount] = useState(initial);
-    const increment = () => setCount(c => c + 1);
-    return [count, increment];
-  }
-  
-  function CustomHookComponent() {
-    const [count, increment] = useCounter();
-    return (
-      <div>
-        <h2>{count}</h2>
-        <button onClick={increment}>Increment</button>
-      </div>
-    );
-  }
-  
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+function Home() {
+  return <h2>Home</h2>;
+}
+function About() {
+  return <h2>About</h2>;
+}
+function RoutingApp() {
+  return (
+    <Router>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
+  );
+}
