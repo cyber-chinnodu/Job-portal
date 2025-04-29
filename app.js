@@ -13,3 +13,12 @@ function ThemedComponent() {
     </div>
   );
 }
+
+
+function ThemeApp() {
+    return (
+      <ThemeContext.Provider value="lightblue">
+        <ThemedComponent />
+      </ThemeContext.Provider>
+    );
+  }
