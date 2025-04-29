@@ -1,24 +1,16 @@
-const ThemeContext = React.createContext();
-
-function ThemedComponent() {
-  const theme = React.useContext(ThemeContext);
-  const inputRef = React.useRef();
-
-  const focusInput = () => inputRef.current.focus();
-
-  return (
-    <div style={{ background: theme }}>
-      <input ref={inputRef} />
-      <button onClick={focusInput}>Focus</button>
-    </div>
-  );
-}
-
-
-function ThemeApp() {
+function useCounter(initial = 0) {
+    const [count, setCount] = useState(initial);
+    const increment = () => setCount(c => c + 1);
+    return [count, increment];
+  }
+  
+  function CustomHookComponent() {
+    const [count, increment] = useCounter();
     return (
-      <ThemeContext.Provider value="lightblue">
-        <ThemedComponent />
-      </ThemeContext.Provider>
+      <div>
+        <h2>{count}</h2>
+        <button onClick={increment}>Increment</button>
+      </div>
     );
   }
+  
