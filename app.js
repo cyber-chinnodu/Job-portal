@@ -1,12 +1,15 @@
-function Timer() {
-    const [seconds, setSeconds] = useState(0);
-  
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setSeconds(prev => prev + 1);
-      }, 1000);
-      return () => clearInterval(interval);
-    }, []);
-  
-    return <h2>Timer: {seconds}s</h2>;
-  }
+const ThemeContext = React.createContext();
+
+function ThemedComponent() {
+  const theme = React.useContext(ThemeContext);
+  const inputRef = React.useRef();
+
+  const focusInput = () => inputRef.current.focus();
+
+  return (
+    <div style={{ background: theme }}>
+      <input ref={inputRef} />
+      <button onClick={focusInput}>Focus</button>
+    </div>
+  );
+}
